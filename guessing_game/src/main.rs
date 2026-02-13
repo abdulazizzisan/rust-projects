@@ -6,6 +6,7 @@ use rand::Rng;
 fn main() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
+
     println!("Guess the number!");
 
     loop {
@@ -28,7 +29,7 @@ fn main() {
             _ => {}
         }
 
-        let guess: u32 = match guess.parse() {
+        let guess = match guess.parse::<u32>() {
             Ok(num) => num,
             Err(_) => {
                 println!("Please enter a valid number!");
