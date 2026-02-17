@@ -1,0 +1,30 @@
+# Ignore target directories (build artifacts) for all projects
+/target/
+
+# Ignore Cargo lock file (if you don't want to version it globally)
+# You can choose to keep it if you need it for your root project
+Cargo.lock
+
+# Ignore backup files
+*.rs.bk
+
+# Ignore IDE/editor config files
+.idea/
+.vscode/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore Rust-specific files
+**/*.rs.bk
+
+# Ignore dependency directories, if any (e.g., for git submodules or local dependencies)
+**/node_modules/
+**/.cargo/
+
+# Ignore any binary artifacts if you generate them from the project
+*.dSYM/
+*.exe
+*.out
+
