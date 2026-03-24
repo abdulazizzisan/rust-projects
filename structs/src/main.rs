@@ -43,5 +43,23 @@ fn main() {
         .username("zisan".to_string())
         .email("email@email.com".to_string())
         .password("password".to_string())
-        .active(true);
+        .active(true)
+        .name("Md Abdul Aziz Zisan".to_string())
+        .build()
+        .expect("Error building user");
+
+    println!("User built using builder: {:#?}", built_user);
+
+    // updating user with struct update syntax
+
+    let user = User{
+        name: "zisan bro".to_string(),
+        ..built_user
+    };
+
+    println!("User instance with update struct syntax: {:#?}", user);
+    println!("active status of old user: {}", built_user.active); // works fine because has copy trait
+    // println!("username of old user: {}", built_user.username); // panics as username moved to user
+    println!("name of old user: {}", built_user.name); // works fine because not moved.
+
 }
