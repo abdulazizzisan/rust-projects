@@ -1,4 +1,6 @@
-#[derive(Debug)]
+use derive_builder::Builder;
+
+#[derive(Debug, Builder)]
 struct User{
     name: String,
     username: String,
@@ -9,6 +11,7 @@ struct User{
 
 fn main() {
 
+    // create instance
     let user = User{
         name: "Md Abdul Aziz Zisan".to_string(),
         username: "zisan".to_string(),
@@ -20,6 +23,7 @@ fn main() {
     println!("User created using regular method: \n {:#?}", user); // print user formatted.
     println!();
 
+    // Mutate Struct Instance
     let mut mutable_user = User{
         name: "Md Abdul Aziz Zisan".to_string(),
         username: "zisan".to_string(),
@@ -33,4 +37,11 @@ fn main() {
     mutable_user.username = "zisan_mutated".to_string();
 
     println!("Mutable user after mutating: \n {:#?}", mutable_user);
+
+    // create instance with builder
+    let built_user = UserBuilder::default()
+        .username("zisan".to_string())
+        .email("email@email.com".to_string())
+        .password("password".to_string())
+        .active(true);
 }
