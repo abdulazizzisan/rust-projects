@@ -5,12 +5,12 @@ struct Rectangle {
 }
 
 impl Rectangle {
-    fn new(height: i32, width: i32) -> Rectangle {
-        Rectangle { height, width }
+    fn new(height: i32, width: i32) -> Self {
+        Self { height, width }
     }
 
-    fn square(len: i32) -> Rectangle {
-        Rectangle {
+    fn square(len: i32) -> Self {
+        Self {
             height: len,
             width: len,
         }
@@ -64,7 +64,7 @@ fn main() {
 
     println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
-    println!("Can rect1 hold rect4? {}", rect1.can_hold(&rect4));
+    println!("Can rect1 hold rect? {}", rect1.can_hold(&rect4));
 }
 fn area(width: i32, height: i32) -> i32 {
     width * height
